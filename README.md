@@ -1,4 +1,4 @@
-# Nginx container with Git
+# NGINX container with Git
 
 ![Travis (.com) branch](https://img.shields.io/github/workflow/status/baskraai/docker-nginx-git/CI?label=Build%20Main&style=flat-square)
 
