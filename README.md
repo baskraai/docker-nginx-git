@@ -59,6 +59,7 @@ You can use the following environment variables with this container:
 | SSH\_PUBKEY | Optional | Give the public ssh key directly | SSH public key |
 | CONFIG\_REPO | Required | The repo url for the NGINX configuration | git ssh link |
 | CONFIG\_MOUNT | Required | The location of the directory mounted NGINX config | linux path |
+| SINGLE\_CONFIG\_NAME | Optional | If specified use this file as nginx.conf | filename with .conf |
 
 ## Extend image
 

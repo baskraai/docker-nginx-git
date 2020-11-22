@@ -35,6 +35,17 @@ else
 	cd ~
 	GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git clone "$CONFIG_REPO" config
 	echo_ok "Cloning config succesful"
+fi
+
+if [ "${SINGLE_CONFIG_NAME}" == "" ]; then
+	echo_info "Only use the configfile ${SINGLE_CONFIG_NAME}"
+	mv "config/nginx/${SINGLE_CONFIG_NAME}" /etc/nginx/nginx.conf
+	if [ ! $? ]; then
+		echo_failed "Could not the config"
+		exit 1
+	fi
+	echo_ok "Copying config succesful"
+else
 	echo_info "Copying the sites config"
 	rsync -aq config/nginx/* /etc/nginx/
 	echo_ok "Copying config succesful"
