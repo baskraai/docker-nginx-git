@@ -37,7 +37,7 @@ else
 	echo_ok "Cloning config succesful"
 fi
 
-if [ "${SINGLE_CONFIG_NAME}" == "" ]; then
+if [ "${SINGLE_CONFIG_NAME}" != "" ]; then
 	echo_info "Only use the configfile ${SINGLE_CONFIG_NAME}"
 	mv "config/nginx/${SINGLE_CONFIG_NAME}" /etc/nginx/nginx.conf
 	if [ ! $? ]; then
@@ -46,7 +46,7 @@ if [ "${SINGLE_CONFIG_NAME}" == "" ]; then
 	fi
 	echo_ok "Copying config succesful"
 else
-	echo_info "Copying the sites config"
+	echo_info "Copying the nginx config"
 	rsync -aq config/nginx/* /etc/nginx/
 	echo_ok "Copying config succesful"
 fi
